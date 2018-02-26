@@ -1,3 +1,10 @@
-<p>
-  cursor works!
-</p>
+<div class="slidecontainer">
+  <input type="range" multiple name="first" min="{{range?.start}}" max="{{range?.end}}" value="{{range?.firstVal}}" step="{{range?.step}}" (change)="onChange($event)">
+  <input type="range" multiple name="scond" min="{{range?.start}}" max="{{range?.end}}" value="{{range?.secondVal}}" step="{{range?.step}}" (change)="onChange($event)">
+
+  <div class="text">
+    <span>{{range?.start}}</span>
+    <span class="curent" *ngIf="rangeArr">{{rangeArr[0]}} - {{rangeArr[1]}}</span>
+    <span>{{range?.end}}</span>
+  </div>
+</div>

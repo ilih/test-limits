@@ -1,18 +1,21 @@
 {
   "line":{
     "start":0,
-    "end":120
+    "end":120,
+    "step":1,
+    "firstVal":0,
+    "secondVal":0
   },
   "limits":[
     {
       "start":10,
       "end":30,
-      "status":true
+      "len":120
     },
     {
       "start":75,
-      "end":100,
-      "status":false
+      "end":85,
+      "len":120
     }
   ]
 }

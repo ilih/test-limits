@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {Component, Input, OnChanges, SimpleChanges} from '@angular/core';
 import {Limit} from '../model/limit';
 
 @Component({
@@ -6,14 +6,19 @@ import {Limit} from '../model/limit';
   templateUrl: './limit.component.html',
   styleUrls: ['./limit.component.scss']
 })
-export class LimitComponent implements OnInit {
+export class LimitComponent implements OnChanges {
   @Input()limit: Limit;
-  @Output()limits = new EventEmitter()
+  start: number;
+  width: number;
 
-
-  constructor() { }
-
-  ngOnInit() {
+  constructor() {
   }
 
+  ngOnChanges(changes: SimpleChanges) {
+    if (changes && changes.limit) {
+      const limit = changes.limit.currentValue;
+      this.start = limit.start / limit.len * 100;
+      this.width = (limit.end - limit.start) / limit.len * 100;
+    }
+  }
 }

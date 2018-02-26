@@ -1,6 +1,7 @@
 import { Limit } from './limit';
+import { Range } from './range';
 
 export interface LimitsData {
-  line: Limit;
+  line: Range;
   limits: Limit[];
 }

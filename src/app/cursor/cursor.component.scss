@@ -1,0 +1,117 @@
+.slidecontainer {
+  width: 100%; /* Width of the outside container */
+  position: relative;
+
+  $multiRangeHeight: 10px;
+  input[type="range"][multiple] {
+    display: block;
+    height: $multiRangeHeight;
+    width: 100%;
+    margin: 0;
+    pointer-events: none;
+    background: rgba(0,0,0,0.15);
+    outline: none;
+    -webkit-appearance: none;
+    appearance: none;
+    position: relative;
+    z-index: 2;
+
+    & + input[type="range"][multiple] {
+      margin-top: $multiRangeHeight * -1;
+    }
+  }
+
+  @mixin multirange-thumb {
+    pointer-events: all;
+  }
+  input[type="range"]::-webkit-slider-thumb {
+    @include multirange-thumb;
+  }
+  input[type="range"]::-moz-range-thumb {
+    @include multirange-thumb;
+  }
+  input[type="range"]::-ms-thumb {
+    @include multirange-thumb;
+  }
+
+  /* The slider itself */
+  input {
+    /* Mouse-over effects */
+    &:hover {
+      opacity: 1; /* Fully shown on mouse-over */
+    }
+
+    /* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
+    &::-webkit-slider-thumb {
+      -webkit-appearance: none; /* Override default look */
+      appearance: none;
+      width: 25px; /* Set a specific slider handle width */
+      height: 25px; /* Slider handle height */
+      border-radius: 50%;
+      background: #fff; /* Green background */
+      border: 1px solid #ccc;
+      cursor: pointer; /* Cursor on hover */
+    }
+
+    &::-moz-range-thumb {
+      width: 25px; /* Set a specific slider handle width */
+      height: 25px; /* Slider handle height */
+      border-radius: 50%;
+      background: #fff; /* Green background */
+      cursor: pointer; /* Cursor on hover */
+    }
+  }
+
+
+  //@media screen and (-webkit-min-device-pixel-ratio:0) {
+  //  input[type='range'] {
+  //    overflow: hidden;
+  //    width: 80px;
+  //    -webkit-appearance: none;
+  //    background-color: #9a905d;
+  //  }
+  //
+  //  input[type='range']::-webkit-slider-runnable-track {
+  //    height: 10px;
+  //    -webkit-appearance: none;
+  //    color: #13bba4;
+  //    margin-top: -1px;
+  //  }
+  //
+  //  input[type='range']::-webkit-slider-thumb {
+  //    width: 10px;
+  //    -webkit-appearance: none;
+  //    height: 10px;
+  //    cursor: ew-resize;
+  //    background: #434343;
+  //    box-shadow: -80px 0 0 80px #43e5f7;
+  //  }
+  //}
+  //
+  ///** FF*/
+  //input[type="range"]::-moz-range-progress {
+  //  background-color: #43e5f7;
+  //}
+  //input[type="range"]::-moz-range-track {
+  //  background-color: #9a905d;
+  //}
+  ///* IE*/
+  //input[type="range"]::-ms-fill-lower {
+  //  background-color: #43e5f7;
+  //}
+  //input[type="range"]::-ms-fill-upper {
+  //  background-color: #9a905d;
+  //}
+
+
+  .text span {
+    &:last-child {
+      float: right;
+    }
+
+    &.curent {
+      margin-left: 20px;
+      font-weight: 800;
+    }
+  }
+}

@@ -1,7 +1,8 @@
-<div class="line">
-  {{limitsData | json}}
-  <app-cursor></app-cursor>
+<div class="line" [ngClass]="{'error': error}">
+  <app-cursor [range]="limitsData?.line" (position)="checkStatus($event)"></app-cursor>
   <ng-container *ngFor="let item of limitsData?.limits">
     <app-limit [limit]="item"></app-limit>
   </ng-container>
 </div>
+<hr>
+{{limitsData | json}}
