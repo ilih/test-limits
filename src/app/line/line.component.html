@@ -1,0 +1,7 @@
+<div class="line">
+  {{limitsData | json}}
+  <app-cursor></app-cursor>
+  <ng-container *ngFor="let item of limitsData?.limits">
+    <app-limit [limit]="item"></app-limit>
+  </ng-container>
+</div>

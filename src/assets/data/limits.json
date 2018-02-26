@@ -1,0 +1,18 @@
+{
+  "line":{
+    "start":0,
+    "end":120
+  },
+  "limits":[
+    {
+      "start":10,
+      "end":30,
+      "status":true
+    },
+    {
+      "start":75,
+      "end":100,
+      "status":false
+    }
+  ]
+}
